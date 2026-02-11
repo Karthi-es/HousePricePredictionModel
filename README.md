@@ -1,4 +1,12 @@
-This project predicts the house prices in the california region.
+### California House Price Prediction Model
 
-I have initially implemented Linear Regression model to predict the house prices and the accuracy of the model is not good as expected. 
-So I am trying other ways to improve the accuracy of the model or use another efficient regression models. Updates will be posted 
+### Software and Tools Requirement
+1. [GitHub Account](https://www.github.com)
+2. [Heroku Account](https://www.heroku.com)
+3. [VSCode IDE](https://code.visualstudio.com)
+
+### Create Virtual Environment.
+python -m venv .venv
+
+## Activate it.
+source .venv/Scripts/activate
