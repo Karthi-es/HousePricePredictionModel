@@ -27,3 +27,6 @@ python app.py
 4. Click Create Web Service.
 
 Render sets the PORT automatically, and gunicorn will bind to it.
+
+## Deployed application link
+https://housepricepredictionmodel.onrender.com/
