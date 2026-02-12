@@ -17,7 +17,7 @@ pip install -r requirements.txt
 ## Run the app.py file
 python app.py
 
-## Deploy on Render (free tier)
+## Deploy on Render
 1. Push this repo to GitHub.
 2. In Render, click New + -> Web Service -> select your repo.
 3. Use these settings:
@@ -25,8 +25,6 @@ python app.py
 	- Build Command: pip install -r requirements.txt
 	- Start Command: gunicorn app:app
 4. Click Create Web Service.
-
-Render sets the PORT automatically, and gunicorn will bind to it.
 
 ## Deployed application link
 https://housepricepredictionmodel.onrender.com/
