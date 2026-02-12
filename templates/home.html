@@ -1,3 +1,100 @@
-<h1>
-Welcome to Machine Learning!
-</h1>
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>House Price Prediction</title>
+		<style>
+			body {
+				font-family: "Georgia", serif;
+				margin: 0;
+				min-height: 100vh;
+				background-color: #f3f0ea;
+				background-image:
+					linear-gradient(120deg, rgba(20, 30, 40, 0.35), rgba(20, 30, 40, 0.05)),
+					url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23d9cbb6'/%3E%3Cstop offset='1' stop-color='%23f3efe6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='1200' height='800' fill='url(%23g)'/%3E%3Ccircle cx='950' cy='120' r='180' fill='%23e7dbc7' opacity='0.55'/%3E%3Ccircle cx='240' cy='640' r='220' fill='%23d9c8b1' opacity='0.45'/%3E%3Cpath d='M0 560 C 240 520 360 640 600 600 C 840 560 960 680 1200 640 L1200 800 L0 800 Z' fill='%23cdb89b' opacity='0.35'/%3E%3C/svg%3E");
+				background-size: cover;
+				background-position: center;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				padding: 32px;
+				color: #222;
+			}
+			.container {
+				max-width: 640px;
+				width: 100%;
+				background: rgba(255, 255, 255, 0.88);
+				backdrop-filter: blur(4px);
+				border-radius: 16px;
+				padding: 24px 28px;
+				box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+			}
+			h1 { margin-top: 0; letter-spacing: 0.5px; }
+			.field { margin-bottom: 12px; }
+			label { display: block; font-weight: 600; margin-bottom: 4px; }
+			input {
+				width: 100%;
+				padding: 10px 12px;
+				box-sizing: border-box;
+				border: 1px solid #c8c1b5;
+				border-radius: 8px;
+				background: #fbfaf8;
+			}
+			button {
+				padding: 10px 16px;
+				cursor: pointer;
+				border: none;
+				border-radius: 8px;
+				background: #5f4b32;
+				color: #fff;
+				font-weight: 600;
+			}
+			button:hover { background: #4d3d28; }
+			.result { margin-top: 16px; font-weight: 600; }
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h1>House Price Prediction</h1>
+			<form action="/predict" method="post">
+				<div class="field">
+					<label for="medinc">Median Income</label>
+					<input id="medinc" name="MedInc" type="number" step="any" required />
+				</div>
+				<div class="field">
+					<label for="houseage">House Age</label>
+					<input id="houseage" name="HouseAge" type="number" step="any" required />
+				</div>
+				<div class="field">
+					<label for="averooms">Average Rooms</label>
+					<input id="averooms" name="AveRooms" type="number" step="any" required />
+				</div>
+				<div class="field">
+					<label for="avebedrms">Average Bedrooms</label>
+					<input id="avebedrms" name="AveBedrms" type="number" step="any" required />
+				</div>
+				<div class="field">
+					<label for="population">Population</label>
+					<input id="population" name="Population" type="number" step="any" required />
+				</div>
+				<div class="field">
+					<label for="aveoccup">Average Occupancy</label>
+					<input id="aveoccup" name="AveOccup" type="number" step="any" required />
+				</div>
+				<div class="field">
+					<label for="latitude">Latitude</label>
+					<input id="latitude" name="Latitude" type="number" step="any" required />
+				</div>
+				<div class="field">
+					<label for="longitude">Longitude</label>
+					<input id="longitude" name="Longitude" type="number" step="any" required />
+				</div>
+				<button type="submit">Predict</button>
+			</form>
+			{% if prediction_text %}
+			<div class="result">{{ prediction_text }}</div>
+			{% endif %}
+		</div>
+	</body>
+</html>

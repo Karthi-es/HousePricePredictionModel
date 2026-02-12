@@ -10,3 +10,9 @@ python -m venv .venv
 
 ## Activate it.
 source .venv/Scripts/activate
+
+## Install Requirements
+pip install -r requirements.txt
+
+## Run the app.py file
+python app.py
